@@ -299,6 +299,8 @@ if __name__ == "__main__":
         assert os.path.isfile(input_path), 'The input file does not exist'
         is_video = input_path[input_path.rfind('.') + 1:].lower() in ['mp4', 'mov']
 
+    print("video:", is_video)
+
     wait = 0
     total_frames = 1
     if is_video:
