@@ -264,6 +264,8 @@ if __name__ == "__main__":
                         ' (only valid during video inference)')
     parser.add_argument('--save-img', default=False, action='store_true',
                         help='save image results')
+    parser.add_argument('--has-onnx', default=False, action='store_true',
+                        help='define have onnx version model')
     parser.add_argument('--save-json', default=False, action='store_true',
                         help='save json results')
     # argcomplete.autocomplete(parser)
@@ -271,7 +273,7 @@ if __name__ == "__main__":
 
     # Load Yolo
     model_name = 'yolov5n' if args.yolo_nano else 'yolov5s'
-    yolo_model = model_name + ('.onnx' if has_onnx else '.pt')
+    yolo_model = model_name + ('.onnx' if args.has_onnx else '.pt')
 
     input_path = args.input
     ext = input_path[input_path.rfind('.'):]
