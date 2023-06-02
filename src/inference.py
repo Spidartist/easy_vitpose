@@ -318,7 +318,8 @@ if __name__ == "__main__":
             assert fps > 0
             output_size = frame.shape[:2][::-1]
             out_writer = cv2.VideoWriter(output_path_img,
-                                         cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
+                                         cv2.VideoWriter_fourcc('m', 'p', '4', 'v'),
+                                         # cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
                                          fps, output_size)
     else:
         reader = [np.array(Image.open(input_path).rotate(args.rotate))]
